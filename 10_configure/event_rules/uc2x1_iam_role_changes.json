@@ -1,0 +1,29 @@
+{
+  "configure": {
+    "policyScope": {
+      "regionScope": {
+        "exclude": "*",
+        "forceInclude": "us-east-1"
+      }
+    },
+    "eventRuleSettings": {
+      "eventName": "uc1x1-iam-role-watcher",
+      "eventDescription": "Will detect 'create' and 'update' events on IAM Roles",
+      "eventPattern": {
+        "detail-type": [
+          "AWS API Call via CloudTrail"
+        ],
+        "detail": {
+          "eventSource": [
+            "iam.amazonaws.com"
+          ],
+          "eventName": [
+            "CreateRole",
+            "PutRolePermissionsBoundary",
+            "DeleteRolePermissionsBoundary"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "extension": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": "*",
+        "forceInclude": {
+          "accountTags": {
+            "classification": [
+              "Confidential",
+              "Restricted"
+            ]
+          },
+          "ouNameWithPath": [
+            {
+              "contains": "/Department2/"
+            }            
+          ]       
+        }
+      }
+    },
+    "findingPattern": {
+      "detail-type": "AWS API Call via CloudTrail",
+      "detail": {
+        "userIdentity": {
+          "sessionContext": {
+            "sessionIssuer": {
+              "userName": [
+                {
+                  "exists": false
+                },
+                {
+                  "exists": true,
+                  "anything-but": "platform-security--auto-remediation--role"
+                }
+              ]
+            }
+          }
+        },
+        "eventSource": "iam.amazonaws.com",
+        "eventName": [
+          "CreateRole",
+          "PutRolePermissionsBoundary",
+          "DeleteRolePermissionsBoundary"
+        ],
+        "responseElements": {
+          "role": {
+            "permissionsBoundary": {
+              "permissionsBoundaryArn": [
+                {
+                  "exists": false
+                },
+                {
+                  "exists": true,
+                  "contains-not": "BoundaryPolicy"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "extensionBlock": {
+      "sqsFanOut": [
+        {
+          "sqsUrl": "https://sqs.eu-central-1.amazonaws.com/626708301729/ar-attach-permission-boundary-policy-trigger"
+        }
+      ]
+    }
+  }
+}

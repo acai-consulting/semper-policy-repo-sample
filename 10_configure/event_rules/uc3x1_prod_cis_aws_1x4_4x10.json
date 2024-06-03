@@ -1,0 +1,36 @@
+{
+  "configure": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": "*",
+        "forceInclude": {
+          "accountTags": {
+            "environment": "production"
+          }
+        }
+      }
+    },
+    "eventRuleSettings": {
+      "eventName": "uc2x1-cis.aws.1.4-4.10-detect-securitygroup-changes",
+      "eventDescription": "CIS AWS 1.4 4.10 - Detected SecurityGroup change events",
+      "eventPattern": {
+        "detail-type": [
+          "AWS API Call via CloudTrail"
+        ],
+        "detail": {
+          "eventSource": [
+            "ec2.amazonaws.com"
+          ],
+          "eventName": [
+            "AuthorizeSecurityGroupIngress",
+            "AuthorizeSecurityGroupEgress",
+            "RevokeSecurityGroupIngress",
+            "RevokeSecurityGroupEgress",
+            "CreateSecurityGroup",
+            "DeleteSecurityGroup"
+          ]
+        }
+      }
+    }
+  }
+}

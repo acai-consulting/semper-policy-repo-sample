@@ -1,0 +1,34 @@
+{
+  "metaData": {
+    "version": "1.0.0",
+    "domain": "configure",
+    "type": "securityhub_controls",
+    "title": "AWS Foundational Security Best Practices",
+    "description": [],
+    "owner": {
+      "name": "Mickey Mouse",
+      "email": "mickey.mouse@acai.gbmh"
+    }
+  },
+  "configure": {
+    "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
+    "disabledControls": [
+      {
+        "controlId": [
+          "IAM.6"
+        ],
+        "disableReason": "as for non Core-Accounts a virtual MFA is sufficient.",
+        "policyScope": {
+          
+        }
+      }
+    ]
+  },
+  "auditing": {
+    "lastAttestationDate": "20221115",
+    "auditor": {
+      "name": "Donald Duck",
+      "email": "donald.duck@acai.gbmh"
+    }
+  }
+}

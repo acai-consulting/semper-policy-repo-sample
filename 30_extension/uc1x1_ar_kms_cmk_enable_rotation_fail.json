@@ -1,0 +1,34 @@
+{
+  "extension": {
+    "findingPattern": {
+      "detail-type": [
+        "AWS API Call via CloudTrail"
+      ],
+      "detail": {
+        "eventSource": [
+          "kms.amazonaws.com"
+        ],
+        "eventName": [
+          "DisableKeyRotation"
+        ]
+      }
+    },
+    "extensionBlock": {
+      "sendToSecurityHub": [
+        {
+          "findingTitle": "KMS CMK Rotation not enabled",
+          "findingSevertiy": 20,
+          "findingResource" : {
+            "id": "raw.detail.requestParameters.keyId",
+            "type": "AwsKmsKey"
+          }
+        }        
+      ],
+      "sqsFanOut": [
+        {
+          "sqsName": "ar-enable-key-rotation-trigger-fail"
+        }
+      ]      
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "extension": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": "*",
+        "forceInclude": {
+          "accountTags": {
+            "title": "Workload Y"
+          },
+          "ouNameWithPath": [
+            {
+              "contains": "/Department2/"
+            }            
+          ]       
+        }
+      }
+    },
+    "findingPattern": {
+      "detail-type": [
+        "AWS API Call via CloudTrail"
+      ],
+      "detail": {
+        "eventSource": [
+          "ec2.amazonaws.com"
+        ],
+        "eventName": [
+          "AuthorizeSecurityGroupIngress"
+        ],
+        "requestParameters": {
+          "ipPermissions": {
+            "items": {
+              "ipProtocol": "tcp",
+              "fromPort": 22,
+              "toPort": 22
+            }
+          }
+        }
+      }
+    },
+    "extensionBlock": {
+      "sqsFanOut": [
+        {
+          "sqsUrl": "https://sqs.eu-central-1.amazonaws.com/626708301729/foundation-ses-notification-trigger",
+          "recipient": "${normalized.accountTags.account_owner}",
+          "messageSubject": "SSH (TCP Port 22) was opened on Security Group in Department 2 - Workload Y - Production account."
+        }
+      ]
+    }
+  }
+}

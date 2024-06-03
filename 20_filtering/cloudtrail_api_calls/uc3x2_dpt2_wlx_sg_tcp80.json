@@ -1,0 +1,41 @@
+{
+  "filtering": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": "*",
+        "forceInclude": {
+          "accountTags": {
+            "title": "Workload X"
+          },
+          "ouNameWithPath": [
+            {
+              "contains": "/Department2/"
+            }            
+          ]       
+        }
+      }
+    },
+    "findingPattern": {
+      "detail-type": [
+        "AWS API Call via CloudTrail"
+      ],
+      "detail": {
+        "eventSource": [
+          "ec2.amazonaws.com"
+        ],
+        "eventName": [
+          "AuthorizeSecurityGroupIngress"
+        ],
+        "requestParameters": {
+          "ipPermissions": {
+            "items": {
+              "ipProtocol": "tcp",
+              "fromPort": 80,
+              "toPort": 80
+            }
+          }
+        }
+      }
+    }
+  }
+}

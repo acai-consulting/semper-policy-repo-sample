@@ -1,0 +1,21 @@
+{
+  "configure": {
+    "eventRuleSettings": {
+      "eventName": "uc3x1-kms-cmk-rotation",
+      "eventDescription": "Detect KMS key rotation disabled",
+      "eventPattern": {
+        "detail-type": [
+          "AWS API Call via CloudTrail"
+        ],
+        "detail": {
+          "eventSource": [
+            "kms.amazonaws.com"
+          ],
+          "eventName": [
+            "DisableKeyRotation"
+          ]
+        }
+      }
+    }
+  }
+}

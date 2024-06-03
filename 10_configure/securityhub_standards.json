@@ -1,0 +1,73 @@
+{
+  "metaData": {
+    "version": "1.0.0",
+    "domain": "configure",
+    "type": "securityhub_standards",
+    "description": [],
+    "owner": {
+      "name": "Mickey Mouse",
+      "email": "mickey.mouse@acai.gbmh"
+    }
+  },
+  "configure": {
+    "securityHubStandards": [
+      {
+        "standardName": "AWS Foundational Security Best Practices",
+        "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
+        "standardArn": "arn:aws:securityhub:${region}::standards/aws-foundational-security-best-practices/v/1.0.0",
+        "targetState": "ENABLED",
+        "policyScope": {}
+      },
+      {
+        "standardName": "CIS AWS Foundations Benchmark v1.4.0",
+        "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
+        "standardArn": "arn:aws:securityhub:${region}::standards/cis-aws-foundations-benchmark/v/1.4.0",
+        "targetState": "ENABLED",
+        "policyScope": {}
+      },
+      {
+        "standardName": "NIST Special Publication 800-53 Revision 5",
+        "standardIdentifier": "nist-800-53/v/5.0.0",
+        "standardArn": "arn:aws:securityhub:${region}::standards/nist-800-53/v/5.0.0",
+        "targetState": "ENABLED",
+        "policyScope": {}
+      },
+      {
+        "standardName": "PCI DSS v3.2.1",
+        "standardIdentifier": "pci-dss/v/3.2.1",
+        "standardArn": "arn:aws:securityhub:${region}::standards/pci-dss/v/3.2.1",
+        "targetState": "ENABLED",
+        "policyScope": {}
+      }
+    ]
+  },
+  "available": [
+    {
+      "StandardsArn": "arn:aws:securityhub:eu-central-1::standards/aws-foundational-security-best-practices/v/1.0.0",
+      "Name": "AWS Foundational Security Best Practices v1.0.0"
+    },
+    {
+      "StandardsArn": "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0",
+      "Name": "CIS AWS Foundations Benchmark v1.2.0"
+    },
+    {
+      "StandardsArn": "arn:aws:securityhub:eu-central-1::standards/cis-aws-foundations-benchmark/v/1.4.0",
+      "Name": "CIS AWS Foundations Benchmark v1.4.0"
+    },
+    {
+      "StandardsArn": "arn:aws:securityhub:eu-central-1::standards/nist-800-53/v/5.0.0",
+      "Name": "NIST Special Publication 800-53 Revision 5"
+    },
+    {
+      "StandardsArn": "arn:aws:securityhub:eu-central-1::standards/pci-dss/v/3.2.1",
+      "Name": "PCI DSS v3.2.1"      
+    }
+  ],
+  "auditing": {
+    "lastAttestationDate": "20221115",
+    "auditor": {
+      "name": "Donald Duck",
+      "email": "donald.duck@acai.gbmh"
+    }
+  }
+}
