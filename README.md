@@ -6,7 +6,7 @@
 
 This SEMPER Demo is based on the following AWS Organization:
 
-![demo-setup](docs/demo_setup.png)
+![demo-setup](./docs/demo_setup.svg)
 
 ### Organization Unit Structure
 
@@ -49,7 +49,7 @@ Requirement: KMS CMK Rotation must be enabled in all accounts.
 
 SEMPER [Configure-Policy](https://github.com/acai-consulting/semper-policy-repo-sample/wiki/10-SEMPER-Policies#policy_type_configure) for event detection: [/10_configure/event_rules/uc1x1_kms_cmk_rotation.json](./10_configure/event_rules/uc1x1_kms_cmk_rotation.json)
 
-SEMPER [Extension-Policy](https://github.com/acai-consulting/semper-policy-repo-sample/wiki/10-SEMPER-Policies#policy_type_extension) for auto remediation: [/30_extension/uc1x1_ar_kms_cmk_enable_rotation.json](./30_extension/uc1x1_ar_kms_cmk_enable_rotation.json)
+SEMPER [Extension-Policy](https://github.com/acai-consulting/semper-policy-repo-sample/wiki/10-SEMPER-Policies#policy_type_extension) for auto-remediation: [/30_extension/uc1x1_ar_kms_cmk_enable_rotation.json](./30_extension/uc1x1_ar_kms_cmk_enable_rotation.json)
 
 
 ## Use-Case 2: IAM Role Governance <a id="uc2"></a> [🔝](#top)
