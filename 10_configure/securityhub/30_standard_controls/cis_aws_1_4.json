@@ -2,7 +2,7 @@
   "metaData": {
     "version": "1.0.0",
     "domain": "configure",
-    "type": "securityhub_controls",
+    "type": "securityhub_standard_controls",
     "title": "CIS AWS 1.4 Controls",
     "description": [],
     "owner": {
@@ -11,15 +11,18 @@
     }
   },
   "configure": {
-    "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
-    "disabledControls": [      
-      {
-        "controlId": [
-          "CloudWatch.*"
-        ],
-        "disableReason": "as this is covered via SEMPER."
-      }
-    ]
+    "policyScope": {},
+    "shStandardControlSettings": {
+      "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
+      "disabledControls": [      
+        {
+          "standardId": [
+            "CloudWatch.*"
+          ],
+          "disableReason": "as this is covered via SEMPER."
+        }
+      ]
+    }
   },
   "auditing": {
     "lastAttestationDate": "20221115",
