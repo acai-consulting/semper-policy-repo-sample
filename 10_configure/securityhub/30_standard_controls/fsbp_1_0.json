@@ -2,7 +2,7 @@
   "metaData": {
     "version": "1.0.0",
     "domain": "configure",
-    "type": "securityhub_controls",
+    "type": "securityhub_standard_controls",
     "title": "AWS Foundational Security Best Practices",
     "description": [],
     "owner": {
@@ -11,18 +11,18 @@
     }
   },
   "configure": {
-    "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
-    "disabledControls": [
-      {
-        "controlId": [
-          "IAM.6"
-        ],
-        "disableReason": "as for non Core-Accounts a virtual MFA is sufficient.",
-        "policyScope": {
-          
+    "shStandardControlSettings": {
+      "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
+      "disabledControls": [
+        {
+          "controlId": [
+            "IAM.6"
+          ],
+          "disableReason": "as for non Core-Accounts a virtual MFA is sufficient.",
+          "policyScope": {}
         }
-      }
-    ]
+      ]
+    }
   },
   "auditing": {
     "lastAttestationDate": "20221115",
