@@ -15,9 +15,7 @@
       "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
       "disabledControls": [
         {
-          "controlId": [
-            "IAM.6"
-          ],
+          "standardId": "IAM.6",
           "disableReason": "as for non Core-Accounts a virtual MFA is sufficient.",
           "policyScope": {}
         }

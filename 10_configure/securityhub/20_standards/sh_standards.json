@@ -26,13 +26,13 @@
       {
         "standardName": "NIST Special Publication 800-53 Revision 5",
         "standardIdentifier": "nist-800-53/v/5.0.0",
-        "targetState": "ENABLED",
+        "targetState": "DISABLED",
         "policyScope": {}
       },
       {
         "standardName": "PCI DSS v3.2.1",
         "standardIdentifier": "pci-dss/v/3.2.1",
-        "targetState": "ENABLED",
+        "targetState": "DISABLED",
         "policyScope": {}
       }
     ]

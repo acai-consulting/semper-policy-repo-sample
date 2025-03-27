@@ -4,31 +4,17 @@
     "domain": "configure",
     "type": "securityhub_standard_controls",
     "title": "CIS AWS 1.4 Controls",
-    "description": [],
-    "owner": {
-      "name": "Mickey Mouse",
-      "email": "mickey.mouse@acai.gbmh"
-    }
+    "description": []
   },
   "configure": {
-    "policyScope": {},
     "shStandardControlSettings": {
       "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
-      "disabledControls": [      
+      "disabledStandardControls": [      
         {
-          "standardId": [
-            "CloudWatch.*"
-          ],
+          "standardId": "4.*",
           "disableReason": "as this is covered via SEMPER."
         }
       ]
-    }
-  },
-  "auditing": {
-    "lastAttestationDate": "20221115",
-    "auditor": {
-      "name": "Donald Duck",
-      "email": "donald.duck@acai.gbmh"
     }
   }
 }

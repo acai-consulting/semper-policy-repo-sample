@@ -17,9 +17,9 @@
         "controlId": "Config.1",
         "parameters": {
           "includeConfigServiceLinkedRoleCheck": {
-            "ValueType": "BOOLEAN",
+            "ValueType": "CUSTOM",
             "Value": {
-              "BooleanValue": false
+              "Boolean": false
             }
           }
         },

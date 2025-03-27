@@ -1,0 +1,54 @@
+{
+  "metaData": {
+    "version": "1.0.0",
+    "domain": "configure",
+    "type": "securityhub_usecase_controls",
+    "title": "MFA for Account Root User",
+    "description": [
+      "For Non Core-Accounts ignore SH.Controls requesting for a MFA for the Account Root User",
+      "Will disable the generic SH.Controls IAM.6, IAM.9"
+    ]
+  },
+  "configure": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": [
+          {
+            "ouNameWithPath": [
+              "Root/Platform/Core"
+            ]
+          },
+          {
+            "accountId": [
+              "AWS-MA Org-Mgmt",
+              "123456789012"
+            ]
+          }
+        ]
+      }
+    },
+    "shUseCaseSettings": {
+      "disableReason": "Root-User actions are blocked via SCP.",
+      "disabledStandardControls": [
+        {
+          "standardIdentifier": "aws-foundational-security-best-practices/v/1.0.0",
+          "standardId": "IAM.6"
+        },
+        {
+          "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
+          "standardId": [
+            "1.5",
+            "1.6"
+          ]
+        },
+        {
+          "standardIdentifier": "nist-800-53/v/5.0.0",
+          "standardId": [
+            "IAM.6",
+            "IAM.9"
+          ]
+        }
+      ]
+    }
+  }
+}

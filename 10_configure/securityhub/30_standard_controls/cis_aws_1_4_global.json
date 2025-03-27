@@ -1,0 +1,46 @@
+{
+  "metaData": {
+    "version": "1.0.0",
+    "domain": "configure",
+    "type": "securityhub_standard_controls",
+    "title": "CIS AWS 1.4 Controls",
+    "description": [
+      "Evaluations on global resources will only be performed in the region eu-central-1.",
+      "The Security Hub controls in the other regions will be disabled."
+    ]
+  },
+  "configure": {
+    "policyScope": {
+      "regionScope": {
+        "exclude": "eu-central-1"
+      }
+    },
+    "shStandardControlSettings": {
+      "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
+      "disabledStandardControls": [
+        {
+          "standardId": [
+            "1.4",
+            "[IAM.9] MFA should be enabled for the root user",
+            "1.5",
+            "[IAM.6] Hardware MFA should be enabled for the root user",
+            "1.6",
+            "[IAM.16] Ensure IAM password policy prevents password reuse",
+            "1.9",
+            "[IAM.5] MFA should be enabled for all IAM users that have a console password",
+            "1.10",
+            "[IAM.3] IAM users' access keys should be rotated every 90 days or less",
+            "1.14",
+            "[IAM.15] Ensure IAM password policy requires minimum password length of 14 or greater",
+            "1.15",
+            "[IAM.1] IAM policies should not allow full '*' administrative privileges",
+            "1.16",
+            "[IAM.18] Ensure a support role has been created to manage incidents with Support",
+            "1.17"
+          ],
+          "disableReason": "as global resources will only be evaluated in eu-central-1."
+        }
+      ]
+    }
+  }
+}

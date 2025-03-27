@@ -1,0 +1,35 @@
+{
+  "metaData": {
+    "version": "1.0.0",
+    "domain": "configure",
+    "type": "securityhub_standard_controls",
+    "title": "CIS AWS 1.4 Controls",
+    "description": []
+  },
+  "configure": {
+    "policyScope": {
+      "accountScope": {
+        "exclude": {
+          "accountId": [
+            "AWS-MA Core Logging",
+            "123456789012"
+          ]
+        }
+      }
+    },
+    "shStandardControlSettings": {
+      "standardIdentifier": "cis-aws-foundations-benchmark/v/1.4.0",
+      "disabledStandardControls": [      
+        {
+          "standardId": [
+            "[CloudTrail.6] Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible",
+            "3.3", 
+            "[CloudTrail.7] Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket",
+            "3.6"
+          ],
+          "disableReason": "as we have CloudTrail logs only in Core Logging."
+        }  
+      ]
+    }
+  }
+}
